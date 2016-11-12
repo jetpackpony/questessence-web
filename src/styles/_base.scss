@@ -1,0 +1,39 @@
+/* Links */
+a,
+a:focus,
+a:hover {
+  color: #fff;
+}
+
+/* Custom default button */
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body` */
+  background-color: #fff;
+  border: .05rem solid #fff;
+}
+
+/*
+ * Base structure
+ */
+$bg-image: "../img/sea.jpg";
+
+html,
+body {
+  height: 100%;
+}
+body {
+  color: #fff;
+  background-color: #333;
+  text-align: left;
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url($bg-image);
+  background-size: cover;
+}
+

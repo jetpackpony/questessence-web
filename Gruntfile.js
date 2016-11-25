@@ -23,24 +23,22 @@ module.exports = function(grunt) {
   grunt.initConfig({
 
     config: {
+      bower: 'bower_components',
       src: 'src',
       dist: 'public'
     },
     sass: {
+      options: {
+        includePaths: [
+          '<%= config.bower %>/bootstrap/scss/',
+          '<%= config.bower %>/tether/src/css/'
+        ],
+        sourceMap: true
+      },
       dist: {
-        options: {
-          loadPath: [
-            "bower_components/bootstrap/scss/",
-            "bower_components/tether/src/css/"
-          ]
-        },
-        files: [{
-          expand: true,
-          cwd: '<%= config.src %>/styles',
-          src: ['*.scss'],
-          dest: '<%= config.dist %>/assets/css',
-          ext: '.css'
-        }]
+        files: {
+          '<%= config.dist %>/assets/css/app.css': '<%= config.src %>/styles/app.scss'
+        }
       }
     },
     watch: {
@@ -132,7 +130,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-bower-concat');
   grunt.loadNpmTasks('grunt-contrib-copy');
 

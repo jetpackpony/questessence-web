@@ -1,11 +1,4 @@
-# Static Boilerplate
-Boiler plate for generating a static website boilerplate. Includes: 
- - [Assemble](http://assemble.io/) - a static site geneartor
- - [Bootstrap 4](http://v4-alpha.getbootstrap.com/) - frontend CSS framework
- - [SASS](http://sass-lang.com) compiler
- - [grunt-contrib-connect](https://github.com/gruntjs/grunt-contrib-connect) module for starting a server with livereload while developing
-
-Everything is optimised for maximum reload speed on file save.
+# Questessence website
 
 ## Usage
 Install packages with:

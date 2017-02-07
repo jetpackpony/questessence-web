@@ -42,6 +42,18 @@ module.exports = function(grunt) {
         }
       }
     },
+    postcss: {
+      options: {
+        map: true,
+        processors: [
+          require('autoprefixer'),
+          require('postcss-flexbugs-fixes')
+        ]
+      },
+      dist: {
+        src: '<%= config.dist %>/assets/css/*.css'
+      }
+    },
     watch: {
       sass: {
         files: ['<%= config.src %>/styles/{,*/}*.scss'],
@@ -138,7 +150,8 @@ module.exports = function(grunt) {
     'bower_concat',
     'copy',
     'assemble',
-    'sass'
+    'sass',
+    'postcss'
   ]);
 
   grunt.registerTask('default', [
